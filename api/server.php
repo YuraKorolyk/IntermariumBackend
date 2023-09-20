@@ -1,9 +1,14 @@
 <?php
+// Enable CORS
+header("Access-Control-Allow-Origin: http://localhost:3000");
+header("Access-Control-Allow-Methods: POST"); // Adjust this as needed
+header("Access-Control-Allow-Headers: Content-Type"); // Adjust this as needed
+
 // Токен телеграм бота
-$tg_bot_token = "6551955592:AAHGN7iMwEknSa3XGgyRJQ8CWxgQrg6cD-A";
+$tg_bot_token = "YOUR_BOT_TOKEN"; // Replace with your Telegram bot token
 
 // ID Чата
-$chat_id = "-1932745429";
+$chat_id = "YOUR_CHAT_ID"; // Replace with your Telegram chat ID
 
 $text = '';
 
@@ -25,7 +30,7 @@ var_dump($text);
 
 file_get_contents($url);
 
-foreach ( $_FILES as $file ) {
+foreach ($_FILES as $file) {
 
     $url = "https://api.telegram.org/bot" . $tg_bot_token . "/sendDocument";
 
@@ -50,3 +55,4 @@ foreach ( $_FILES as $file ) {
 }
 
 die('1');
+?>
